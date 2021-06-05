@@ -1,0 +1,80 @@
+{% load static %}
+<!-- {% static "smagex" as baseUrl %} -->
+    <title>Sparks Job Application | Welcome </title>
+    <link rel="stylesheet" href="{% static 'styles_d.css' %}">
+    <header>
+     <div class="container">
+    <div id="branding">
+        <h1><span class="highlight">DONATE</span>FORCHANGE</h1> 
+         </div>   
+         <nav>
+             <ul>
+             <li class="current"><a href ="/">Home</a></li>
+                 <li><a href ="/donate">Donate</a></li>
+                 <li><a href="/admin">Admin Login</a></li>
+                 
+
+             </ul>
+         </nav>
+    </div>
+    </header>
+    <br>
+    <br>
+    <div class="header">
+        
+<h1>Lets make a donation!</h1>
+
+    </div>
+    <br>
+    <section class="c">
+    <section class="section">
+        
+        
+        <form action="donate" method="post">
+            {% csrf_token %}
+            
+            First Name: 
+            <br>
+            <input type="text" name="Donor_name" >
+            <br>
+            <br>
+            Number of Items donating:
+            <br>
+             <input type="number" name="Number_of_items" >
+            <br>
+            <br>
+             Items donating:  
+             <br>   
+             <input type="text" name="Items" >
+            <br>
+            <br>
+
+            Date Of donation:  
+             <br>     
+            <input type="date" name="donation_date">
+            <br>
+            <br>
+            Amount donating: 
+            <br>
+            <input type="number" name="cash">
+            <br>
+            <br>
+            
+            
+            <input type="submit">
+            </form>
+            <br>
+    </section>
+</section>
+<div class="print">
+    <h1>Already made donations</h1>
+        {% for donor in donors %}
+        <div class="don"></div>
+        <p>{{donor.Donor_name}}</p>
+    </div>
+    {% endfor%}
+</div>
+
+
+   
+    

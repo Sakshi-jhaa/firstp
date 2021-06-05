@@ -1,0 +1,7 @@
+{% extends "job/portal.html" %}
+{% block content %}
+<h2>Number:{{size}}</h2>
+{% for ss in l %}
+<p>{{ss.job_role}}</p>
+{% endfor %}
+{% endblock content %}

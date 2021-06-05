@@ -1,0 +1,65 @@
+{% load static %}
+<!-- {% static "smagex" as baseUrl %} -->
+    <title>Sparks Job Application | Welcome </title>
+    <link rel="stylesheet" href="{% static 'styles_p.css' %}">
+    <header>
+     <div class="container">
+    <div id="branding">
+        <h1><span class="highlight">Spark</span> Job Finder </h1> 
+         </div>   
+         <nav>
+             <ul>
+             <li class="current"><a href ="index.html">Home</a></li>
+                 <li><a href ="/apply">Apply</a></li>
+                 <li><a href="/admin">Admin Login</a></li>
+
+             </ul>
+         </nav>
+    </div>
+    </header>
+    <section id="showcase">
+    <div class="container" style="color:black;">
+        <h1>Lets go!</h1>
+        <p>Need to find a new job</p>
+        <p>Want to explore what this world has for your talent?</p>
+        <p>You are at the right place!</p>
+        <p>We help you apply for jobs</p>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="q"> 
+    <h2 style="color:orangered;">List of jobs available in Hubli that pay 50k:</h2>
+
+       
+    <div class="query">
+        {% for appl in key%}
+        
+        <h3>{{appl.job_role}} in {{appl.Specification}}</h3>
+        
+        
+        {% endfor %}
+    </div>
+    </div>
+    <div class="p">
+    <h2 style="color:orangered;">List of jobs available</h2>
+    <div>
+        {%for appss in app%}
+        <h3>{{appss.job_role}} in {{appss.Location}} paying {{appss.salary}}k</h3>
+        {% endfor%}
+    </div>
+    </div>
+        
+
+
+    

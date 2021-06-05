@@ -1,0 +1,59 @@
+{% load static %}
+<link href="{% static '//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css' %}">
+<script src="{% static '//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js' %}"></script>
+<script src="{% static '//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'styles_r.css' %}">
+<!------ Include the above in your HEAD tag ---------->
+
+<!------ Include the above in your HEAD tag ---------->
+<form action="register" method="post">
+{% csrf_token %}
+
+<div class="container register-form">
+    <div class="form">
+        <div class="note">
+            <p>Register yourself here</p>
+        </div>
+
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="first_name" placeholder="First Name *" value=""/>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="text" name="last_name" placeholder="Last Name *" value=""/>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="text" name="username" placeholder="Username *" value=""/>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email *" value=""/>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="password" name="password1" placeholder="Your Password *" value=""/>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="password" name="password2" placeholder="Confirm Password *" value=""/>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <input type="Submit">
+        </div>
+
+    </div>
+</div>
+</form>
+<div>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+</div>

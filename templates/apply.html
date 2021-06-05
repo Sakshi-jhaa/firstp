@@ -1,0 +1,28 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles_a.css' %}">
+<div class="f">
+    <h3>Apply here!</h3>
+    </div>
+<form action="apply" method="post">
+    {% csrf_token %}
+    
+    <input type="text" name="job_role" placeholder="JOB ROLE..">
+    <br>
+    <input type="text" name="Qualification" placeholder="Qualification..">
+    <br>
+    <input type="text" name="Specification" placeholder="SPECIFICATION..">
+    <br>
+    <input type="text" name="Location" placeholder="LOCATION..">
+    <br>
+    <input type="number" name="salary" placeholder="SALARY IN THOUSAND..">
+    <br>
+    <input type="date" name="apply_date">
+    <br>
+    <input type="submit">
+    </form>
+    <br>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+    <div>
+
